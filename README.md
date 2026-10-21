@@ -18,19 +18,24 @@ Instead of traditional TF-IDF or BM25 (which fail when a query uses synonyms or 
 
 ## Pipeline Overview
 
+```text
 User Query (e.g. "astronaut stranded near jupiter")
-│
-▼
+       │
+       ▼
 [FastAPI /recommend endpoint]
-│
-▼
+       │
+       ▼
 [FastEmbed ONNX Runtime (bge-small-en-v1.5)] ──► 384-d Query Vector
-│
-▼
+       │
+       ▼
 [Qdrant Cloud (HNSW Index)] ──────────────────► Cosine Similarity Top-K IDs
-│
-▼
+       │
+       ▼
 [TMDB API Hydration] ─────────────────────────► Posters, Directors, IMDb Links
+       │
+       ▼
+JSON Response ──► React UI
+```
 │
 ## Tech Stack
 
