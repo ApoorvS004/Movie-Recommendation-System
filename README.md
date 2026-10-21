@@ -36,7 +36,7 @@ User Query (e.g. "astronaut stranded near jupiter")
        ▼
 JSON Response ──► React UI
 ```
-│
+
 ## Tech Stack
 
 - **Language:** Python 3.11
